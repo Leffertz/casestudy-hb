@@ -1,0 +1,65 @@
+1. Sketch a logic framework that will provide the basis to allocate this trade based on the
+information given and any necessary assumptions
+a. What goals does your allocation framework achieve?
+b. What are the key assumptions you made to build this framework?
+c. Do any of these assumptions give you pause? If so, why? 
+
+
+Allocation Framework
+1) Re-evaluate existing fund position sizes based on traded price
+1) Determine default allocations using fund position target sizes
+2) Determine remaining capacity under fund position target sizes 
+3) Compare allocations to remaining size under allocation target
+	a) subtract existing fund position size from target position size
+	b) if any new fund position sizes are in excess of target position sizes, add excess pro rata amongst remaining funds and repeat 3a
+4) round to nearest even lot
+
+Goals
+a. primary consideration is to achieve fund position sizes consistent with proportion of fund nav to total firm nav but constrain position size to default exposure target.
+b. assumes default exposure target for bonds is market value regardless of bond type
+c. assumes positions are re-balanced monthly; any mtd performance is added to bom nav.  
+
+2. How would you allocate this trade?
+a. How do the goals of your allocation framework change?
+Allocate pro rata with existing bond fund position sizes based on equity delta not market value
+b. What are the key assumptions you made to adjust your framework?
+Assumes the stock is an equity hedge to the convertible bond - the existing bond fund position size takes precendent over default exposure target
+Assumes each fund has a locate in place for the short position equal to the total traded amount
+c. Do any of these assumptions give you pause? If so, why? 
+This may result in all funds being under hedged
+
+3. What difficulty can you foresee with a manual (think excel spreadsheet) implementation of your
+framework? 
+The base allocation framework will likely be implemented using recursion
+
+4. Alternatively, if you were to automate this process, what real-world pain points do you envision
+with its creation?
+If a position is not balanced at the start of the day the trade should not follow the default allocation framework
+Hedges and related positions must remain balanced
+a. What data, systems, and processes would you need to build and maintain in order to
+automate this process? 
+Start of the day positions sizes, mtd performance, a strategy tag to identify related positions
+
+5. As a thought exercise (no need to build another framework) what approach would you use to
+allocate these two trades assuming they needed to be paired and were eligible for multiple
+funds?
+If no default exposure target, allocate both trades pro rata with fund navs
+Assumes each fund has a locate in place for the short position
+	
+6. What makes this question more difficult than the earlier allocation decisions?
+The allocation should be based on delta exposure rather than market value
+
+7. What simplifying assumption could you make in order to arrive at a reasonable answer? 
+Equities will always be allocated using delta rather than market value
+
+8. What additional information would you like to know to complete this exercise more accurately?
+Identify the target exposure measure (equity delta, market value, vega, etc)
+
+
+Considerations
+Security type / primary exposure measure
+Position increasing / decreasing
+Risk or hedge
+Impact of traded price on existing exposure measures
+Dirty amount for bonds
+Differences in fund valuation policies
