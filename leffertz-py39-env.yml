@@ -1,11 +1,11 @@
 name: leffertz-py39-env
 channels:
   - defaults
-  - conda-forge
 dependencies:
   - python=3.9
   - notebook=6.5.2
   - pandas=2.0.1
   - scipy
   - openpyxl
+  - statsmodels
 prefix: C:\Users\jeffr\anaconda3\envs\leffertz-py39-env

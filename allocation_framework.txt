@@ -6,8 +6,8 @@ c. Do any of these assumptions give you pause? If so, why?
 
 
 Allocation Framework
-1) Re-evaluate existing fund position sizes based on traded price
-1) Determine default allocations using fund position target sizes
+1) Update existing fund position sizes based on traded price
+2) Determine default allocations using fund position target sizes
 2) Determine remaining capacity under fund position target sizes 
 3) Compare allocations to remaining size under allocation target
 	a) subtract existing fund position size from target position size
